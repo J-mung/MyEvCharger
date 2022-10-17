@@ -1,4 +1,4 @@
-package com.example.myevcharger.data.model
+package com.example.myevcharger.domain.model
 
 data class EvChargerResponse(
     val evCharger: MutableList<EvCharger>,
