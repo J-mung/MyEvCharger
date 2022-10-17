@@ -1,8 +1,9 @@
-package com.example.myevcharger
+package com.example.myevcharger.presentation
 
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myevcharger.R
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -10,7 +11,7 @@ import java.io.InputStreamReader
 import java.net.URL
 import kotlin.concurrent.thread
 
-class MainActivity : AppCompatActivity() {
+class ChargerApiTest: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun getApiResponse(): JSONArray{
+    private fun getApiResponse(): JSONArray {
         // 키 값
         val key =
             "?serviceKey=S3oMKMheftHOUnPv8Nt5eJGUvyQ66YYSWxOoCCrGUxABrzjUy1DBMm2s%2BbZnVE39b%2Bk0thTJX2GzoG%2FTs4ZdUw%3D%3D"

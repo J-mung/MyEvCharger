@@ -1,4 +1,4 @@
-package com.example.myevcharger.data.model
+package com.example.myevcharger.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -38,5 +38,6 @@ data class EvCharger(
     var limitYn: String?,               // 이용자 제한
     var limitDetail: String?,           // 이용자제한 사유
     var delYn: String?,                 // 삭제 여부
-    var delDetail: String?              // 삭제 사유
+    var delDetail: String?,             // 삭제 사유
+    var saved: Boolean = false           // 즐겨찾기
 ): Serializable
