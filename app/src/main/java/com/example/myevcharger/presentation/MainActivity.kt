@@ -1,14 +1,8 @@
-package com.example.myevcharger
+package com.example.myevcharger.presentation
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.net.URL
-import kotlin.concurrent.thread
+import com.example.myevcharger.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
