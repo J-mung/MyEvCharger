@@ -1,5 +1,6 @@
 package com.example.myevcharger.data.local.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -11,16 +12,17 @@ import kotlinx.coroutines.flow.Flow
 interface EvChargerDao {
 
     @Query("SELECT * FROM evChargers")
-    suspend fun getAllCharger(): Flow<List<EvCharger>>
+    fun getAllCharger(): LiveData<List<EvCharger>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveCharger(evCharger: EvCharger)
-
+    suspend fun upsert(evCharger: EvCharger): Long
+/*
     @Query("SELECT EXISTS(SELECT * FROM evChargers WHERE statId =:statId)")
     suspend fun isSavedCharger(statId: Int): Boolean
 
     @Query("DELETE FROM evChargers WHERE statId =:statId")
     suspend fun deleteCharger(statId: Int)
+*/
 
     /*
     @Delete
