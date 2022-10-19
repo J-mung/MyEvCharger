@@ -14,8 +14,8 @@ class LocalEvChargerRepository (
     suspend fun getChargerZcode(zcode: Int) =
         RetrofitInstance.api.getEvChargers(zcode)
 
-    suspend fun upsert(evCharger: EvCharger) = db.getEvChargerDao()
+    suspend fun insert(evCharger: EvCharger) = db.getEvChargerDao().upsert(evCharger)
 
-    fun getSavedEvCharger() = db.getEvChargerDao()
+    fun getSavedEvCharger() = db.getEvChargerDao().getAllCharger()
 
 }
