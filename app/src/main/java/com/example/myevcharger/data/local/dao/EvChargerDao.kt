@@ -14,6 +14,9 @@ interface EvChargerDao {
     @Query("SELECT * FROM evChargers")
     fun getAllCharger(): LiveData<List<EvCharger>>
 
+    @Query("SELECT * FROM evChargers WHERE zcode =:zcode")
+    fun getChargerZcode(zcode: Int): LiveData<List<EvCharger>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(evCharger: EvCharger): Long
 /*

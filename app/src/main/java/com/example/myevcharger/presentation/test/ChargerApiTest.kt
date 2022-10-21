@@ -1,9 +1,12 @@
-package com.example.myevcharger.presentation
+package com.example.myevcharger.presentation.test
 
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.example.myevcharger.R
+import com.example.myevcharger.data.database.EvChargerDatabase
+import com.example.myevcharger.data.local.repository.LocalEvChargerRepositoryImpl
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -12,36 +15,17 @@ import java.net.URL
 import kotlin.concurrent.thread
 
 class ChargerApiTest: AppCompatActivity() {
+    lateinit var testViewModel : RepoTestViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var text: TextView = findViewById(R.id.tv)
+        val chargerRepositoryImpl = LocalEvChargerRepositoryImpl(EvChargerDatabase(this))
+        val viewModelProviderFactory = ChargerViewModelProviderFactory(chargerRepositoryImpl)
+        testViewModel = ViewModelProvider(this, viewModelProviderFactory).get(RepoTestViewModel::class.java)
 
-
-        // 전체가 객체로 묶여있기 때문에 객체형태로 가져옴
-        val subThread = thread() {
-            // 객체 안에 있는 item이라는 이름의 리스트를 가져옴
-            val item = getApiResponse()
-
-            // 화면에 출력
-            runOnUiThread {
-
-                // 페이지 수만큼 반복하여 데이터를 불러옴
-                for (i in 0 until item.length()) {
-
-                    // 쪽수 별로 데이터를 읽는다.
-                    val jObject = item.getJSONObject(i)
-
-                    text.append("${i + 1}번 충전소\n")
-                    text.append("${JSON_parse(jObject, "statId")}\n")
-                    text.append("${JSON_parse(jObject, "chgerId")}\n")
-                    text.append("${JSON_parse(jObject, "stat")}\n")
-                }
-            }
-        }
-        subThread.join()
-
+        System.out.println(testViewModel.getChargers().toString())
     }
 
     private fun getApiResponse(): JSONArray {

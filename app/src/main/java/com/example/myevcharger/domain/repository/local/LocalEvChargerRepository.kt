@@ -1,12 +1,11 @@
 package com.example.myevcharger.domain.repository.local
 
+import androidx.lifecycle.LiveData
 import com.example.myevcharger.domain.model.EvCharger
-import kotlinx.coroutines.flow.Flow
-
 
 interface LocalEvChargerRepository {
-    suspend fun getAllCharger(): Flow<List<EvCharger>>
+    suspend fun getAllCharger(): LiveData<List<EvCharger>>
 
-    suspend fun getChargerZcode(zcode: Int)
+    suspend fun getChargerZcode(zcode: Int): LiveData<List<EvCharger>>
 
 }
