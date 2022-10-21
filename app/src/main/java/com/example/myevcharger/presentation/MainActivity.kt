@@ -22,9 +22,4 @@ class MainActivity : AppCompatActivity() {
         tv.setText("Hello world!")
         */
     }
-
-    fun getChargerList() {
-        val repository: LocalEvChargerRepository
-        repository.getAllCharger().toString()
-    }
 }
