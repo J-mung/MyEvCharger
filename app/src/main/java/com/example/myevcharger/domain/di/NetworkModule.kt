@@ -1,4 +1,4 @@
-package com.example.myevcharger.di
+package com.example.myevcharger.domain.di
 
 import com.example.myevcharger.utils.Constants.Companion.BASE_URL
 import retrofit2.Retrofit
