@@ -8,9 +8,9 @@ import java.io.Serializable
     tableName = "evChargers"
 )
 data class EvCharger(
-    @PrimaryKey(autoGenerate = true)
-    val statId: Int?,                   // 충전소 ID
     val statNum: String? = "unkown",    // 충전소명
+    @PrimaryKey(autoGenerate = true)
+    val statId: Int? = null,            // 충전소 ID
     val chgerId: Int?,                  // 충전기 ID
     var chgerType: Int?,                // 충전기 타입
     val addr: String? = "unkown",       // 주소
