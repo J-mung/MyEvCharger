@@ -4,8 +4,8 @@ class Constants {
     companion object {
 
         // EvCharger API
-        const val EV_API_KEY = "S3oMKMheftHOUnPv8Nt5eJGUvyQ66YYSWxOoCCrGUxABrzjUy1DBMm2s%2BbZnVE39b%2Bk0thTJX2GzoG%2FTs4ZdUw%3D%3D"
-        const val BASE_URL = "http://apis.data.go.kr"
+        const val EV_API_KEY = "xBmTQYUBuNpkMBsPQkhA1K9xD47Gz5g4mc7sZtutwA%2FRzw9iiDbF%2BUHGh1Qv93DPmJf%2FZbRcfLl%2B%2BajQGEtb5Q%3D%3D"
+        const val BASE_URL = "http://apis.data.go.kr/B552584/EvCharger/"
         const val EV_DATA_TYPE = "JSON"
 
         // TMAP API
