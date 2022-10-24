@@ -11,20 +11,19 @@ import com.example.myevcharger.domain.model.EvCharger
 interface EvChargerDao {
 
     @Query("SELECT * FROM evChargers")
-    fun getAllCharger(): LiveData<List<EvCharger>>
+    fun getSavedEvCharger(): LiveData<List<EvCharger>>
 
     /*@Query("SELECT * FROM evChargers WHERE zcode =:zcode")
     fun getChargerZcode(zcode: Int): LiveData<List<EvCharger>>*/
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(evCharger: EvCharger): Long
-/*
+    fun upsert(evCharger: EvCharger): Long
+
     @Query("SELECT EXISTS(SELECT * FROM evChargers WHERE statId =:statId)")
     suspend fun isSavedCharger(statId: Int): Boolean
 
     @Query("DELETE FROM evChargers WHERE statId =:statId")
     suspend fun deleteCharger(statId: Int)
-*/
 
     /*
     @Delete
