@@ -5,7 +5,7 @@
 
 ## ToDo List
 - BaseActivity & MainActivity의 "should be subtype of 'ViewDataBinding'" 에러 해결하기
-- api, retrofit, repository 등의 인스턴스 생성과 같은 상호작용에 쓰일 UseCase 만들기
+- 종속 항목 삽입 다시 공부하기
 
 
 ## Done
