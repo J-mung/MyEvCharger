@@ -15,11 +15,14 @@
 
 (10.23)
 - duplicate class found javax.inject 고치기
-: implementation files('libs\\javax-inject.jar') 삭제로 해결
+
+  :implementation files('libs\\javax-inject.jar') 삭제로 해결
 
 (10.24)
 - 종속 항목을 적용해서 repository를 local과 remote로 나누기
 
 (10.25)
 - BaseActivity & MainActivity의 "should be subtype of 'ViewDataBinding'" 에러 해결하기
-: activity_main.xml의 코드를 <layout></layout>으로 감쌈으로써 해결
+
+  : activity_main.xml의 코드를 <layout></layout>으로 감쌈으로써 해결
+
