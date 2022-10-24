@@ -1,4 +1,6 @@
-package com.example.myevcharger.domain.model
+package com.example.myevcharger.data.remote.model
+
+import com.example.myevcharger.domain.model.EvCharger
 
 data class EvChargerResponse(
     val evChargers: MutableList<EvCharger>,
