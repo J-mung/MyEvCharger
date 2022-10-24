@@ -2,10 +2,7 @@ package com.example.myevcharger.presentation.test
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import com.example.myevcharger.R
-import com.example.myevcharger.data.local.database.EvChargerDatabase
-import com.example.myevcharger.data.local.datasource.LocalEvChargerDataSourceImpl
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader

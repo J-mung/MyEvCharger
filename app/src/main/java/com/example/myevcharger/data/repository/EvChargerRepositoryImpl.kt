@@ -14,7 +14,15 @@ class EvChargerRepositoryImpl @Inject constructor(
     override suspend fun getAllCharger() =
         evChargerRemoteDataSource.getAllCharger()
 
-    override suspend fun upsert(evCharger: EvCharger) = evChargerLocalDataSource.upsert(evCharger)
+    override fun upsert(evCharger: EvCharger) =
+        evChargerLocalDataSource.upsert(evCharger)
 
-    override fun getSavedEvCharger() = evChargerLocalDataSource.getSavedEvCharger()
+    override fun getSavedEvCharger() =
+        evChargerLocalDataSource.getSavedEvCharger()
+
+    override suspend fun isSavedCharger(statId: Int): Boolean =
+        evChargerLocalDataSource.isSavedCharger(statId)
+
+    override suspend fun deleteCharger(statId: Int) =
+        evChargerLocalDataSource.deleteCharger(statId)
 }
