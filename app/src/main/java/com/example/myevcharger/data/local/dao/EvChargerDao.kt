@@ -6,7 +6,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.myevcharger.domain.model.EvCharger
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface EvChargerDao {
@@ -14,8 +13,8 @@ interface EvChargerDao {
     @Query("SELECT * FROM evChargers")
     fun getAllCharger(): LiveData<List<EvCharger>>
 
-    @Query("SELECT * FROM evChargers WHERE zcode =:zcode")
-    fun getChargerZcode(zcode: Int): LiveData<List<EvCharger>>
+    /*@Query("SELECT * FROM evChargers WHERE zcode =:zcode")
+    fun getChargerZcode(zcode: Int): LiveData<List<EvCharger>>*/
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(evCharger: EvCharger): Long
