@@ -1,4 +1,4 @@
-package com.example.myevcharger.data.database
+package com.example.myevcharger.data.local.database
 
 import android.content.Context
 import androidx.room.Database

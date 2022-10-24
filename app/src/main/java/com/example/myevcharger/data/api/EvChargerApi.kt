@@ -1,6 +1,6 @@
 package com.example.myevcharger.data.api
 
-import com.example.myevcharger.domain.model.EvChargerResponse
+import com.example.myevcharger.data.remote.model.EvChargerResponse
 import com.example.myevcharger.utils.Constants.Companion.EV_API_KEY
 import com.example.myevcharger.utils.Constants.Companion.EV_DATA_TYPE
 import retrofit2.Response

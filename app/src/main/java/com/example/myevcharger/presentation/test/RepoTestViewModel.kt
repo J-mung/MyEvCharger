@@ -3,14 +3,15 @@ package com.example.myevcharger.presentation.test
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myevcharger.data.local.repository.LocalEvChargerRepositoryImpl
-import com.example.myevcharger.domain.model.EvChargerResponse
+import com.example.myevcharger.data.remote.datasource.RemoteEvChargerDataSourceImpl
+import com.example.myevcharger.data.remote.model.EvChargerResponse
+import com.example.myevcharger.data.repository.EvChargerRepositoryImpl
 import com.example.myevcharger.utils.Resource
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
 class RepoTestViewModel(
-    val chargerRepository: LocalEvChargerRepositoryImpl
+    val chargerRepository: EvChargerRepositoryImpl
 ) : ViewModel() {
 
     val chargers: MutableLiveData<Resource<EvChargerResponse>> = MutableLiveData()

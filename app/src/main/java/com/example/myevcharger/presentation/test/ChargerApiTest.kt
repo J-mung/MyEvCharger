@@ -1,18 +1,16 @@
 package com.example.myevcharger.presentation.test
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.myevcharger.R
-import com.example.myevcharger.data.database.EvChargerDatabase
-import com.example.myevcharger.data.local.repository.LocalEvChargerRepositoryImpl
+import com.example.myevcharger.data.local.database.EvChargerDatabase
+import com.example.myevcharger.data.local.datasource.LocalEvChargerDataSourceImpl
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.URL
-import kotlin.concurrent.thread
 
 class ChargerApiTest: AppCompatActivity() {
     lateinit var testViewModel : RepoTestViewModel
@@ -21,11 +19,11 @@ class ChargerApiTest: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val chargerRepositoryImpl = LocalEvChargerRepositoryImpl(EvChargerDatabase(this))
+        /*val chargerRepositoryImpl = LocalEvChargerDataSourceImpl(EvChargerDatabase(this))
         val viewModelProviderFactory = ChargerViewModelProviderFactory(chargerRepositoryImpl)
         testViewModel = ViewModelProvider(this, viewModelProviderFactory).get(RepoTestViewModel::class.java)
 
-        System.out.println(testViewModel.getChargers().toString())
+        System.out.println(testViewModel.getChargers().toString())*/
     }
 
     private fun getApiResponse(): JSONArray {
