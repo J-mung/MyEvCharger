@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyEvCharger</string>
+    <string name="tmap_lable">TMAP</string>
+    <string name="setting_lable">Setting</string>
 </resources>
