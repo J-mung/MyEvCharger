@@ -5,7 +5,6 @@
 
 ## ToDo List
 - 종속 항목 삽입 다시 공부하기
-- TMAP fragment 만들어서 지도 띄우기
 - Api로부터 받은 데이터 하나로 지도에 marker 띄우기
 
 
@@ -26,3 +25,5 @@
 
     activity_main.xml의 코드를 <layout></layout>으로 감쌈으로써 해결
 
+(11.14)
+- TMAP fragment 만들어서 지도 띄우기
