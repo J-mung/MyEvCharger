@@ -8,10 +8,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
 abstract class BaseActivity<T: ViewDataBinding>(
-    @LayoutRes private val layoutResId: Int
+    @LayoutRes val layoutResId: Int
 ): AppCompatActivity() {
     private var _binding: T? = null
-    private val binding: T
+    protected val binding: T
         get() = requireNotNull(_binding)
 
     override fun onCreate(savedInstanceState: Bundle?) {

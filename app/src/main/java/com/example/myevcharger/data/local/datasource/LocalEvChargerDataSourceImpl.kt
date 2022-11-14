@@ -11,7 +11,7 @@ class LocalEvChargerDataSourceImpl @Inject constructor(
     override fun getSavedEvCharger(): LiveData<List<EvCharger>> =
         evChargerDao.getSavedEvCharger()
 
-    override fun upsert(evCharger: EvCharger): Long =
+    override suspend fun upsert(evCharger: EvCharger): Long =
         evChargerDao.upsert(evCharger)
 
     override suspend fun isSavedCharger(statId: Int): Boolean =

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/menu_bottom_nav">
+        <item
+            android:id="@+id/tmapFragment"
+            android:icon="@drawable/ic_bottom_home"
+            android:title="@string/tmap_lable"/>
+
+        <item
+            android:id="@+id/settingFragment"
+            android:icon="@drawable/ic_bottom_setting"
+            android:title="@string/setting_lable"/>
+    </group>
+</menu>

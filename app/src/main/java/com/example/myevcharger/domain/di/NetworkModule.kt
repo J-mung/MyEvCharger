@@ -55,11 +55,11 @@ object NetworkModule {
     @Provides
     fun providesRetrofit(
         okHttpClient: OkHttpClient,
-        convertorGson: Gson
+        //convertorGson: Gson
     ): Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .client(okHttpClient)
-        .addConverterFactory(GsonConverterFactory.create(convertorGson))
+        .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()
 

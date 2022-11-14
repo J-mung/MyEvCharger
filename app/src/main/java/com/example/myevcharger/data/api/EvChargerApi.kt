@@ -1,5 +1,6 @@
 package com.example.myevcharger.data.api
 
+import com.example.myevcharger.data.remote.model.EvChargerApiModel
 import com.example.myevcharger.data.remote.model.EvChargerResponse
 import com.example.myevcharger.utils.Constants.Companion.EV_API_KEY
 import com.example.myevcharger.utils.Constants.Companion.EV_DATA_TYPE
@@ -32,5 +33,5 @@ interface EvChargerApi {
         pageNo: Int = 1,
         @Query("dataType")
         dataType: String = EV_DATA_TYPE
-    ): Response<EvChargerResponse>
+    ): EvChargerResponse
 }

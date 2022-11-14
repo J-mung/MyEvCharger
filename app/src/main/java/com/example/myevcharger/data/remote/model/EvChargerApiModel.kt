@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.io.Serializable
 
+@kotlinx.serialization.Serializable
 @Entity(
     tableName = "evChargerEntity"
 )
@@ -40,4 +41,4 @@ data class EvChargerApiModel(
     var delYn: String?,                 // 삭제 여부
     var delDetail: String?,             // 삭제 사유
     var saved: Boolean = false          // 즐겨찾기
-) : Serializable
+)

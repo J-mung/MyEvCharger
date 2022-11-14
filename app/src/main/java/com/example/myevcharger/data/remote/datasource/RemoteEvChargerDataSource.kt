@@ -4,5 +4,5 @@ import com.example.myevcharger.data.remote.model.EvChargerResponse
 import retrofit2.Response
 
 interface RemoteEvChargerDataSource {
-    suspend fun getAllCharger() : Response<EvChargerResponse>
+    suspend fun getAllCharger() : EvChargerResponse
 }

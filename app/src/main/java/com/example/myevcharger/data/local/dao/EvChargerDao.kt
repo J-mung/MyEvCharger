@@ -17,7 +17,7 @@ interface EvChargerDao {
     fun getChargerZcode(zcode: Int): LiveData<List<EvCharger>>*/
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsert(evCharger: EvCharger): Long
+    suspend fun upsert(evCharger: EvCharger): Long
 
     @Query("SELECT EXISTS(SELECT * FROM evChargers WHERE statId =:statId)")
     suspend fun isSavedCharger(statId: Int): Boolean
