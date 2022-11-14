@@ -1,10 +1,13 @@
 package com.example.myevcharger.domain.model
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 import java.io.Serializable
 
 // view에 보여줄 데이터로만 구성되도록 정리
+@Parcelize
 @Entity(
     tableName = "evChargers"
 )
@@ -20,4 +23,4 @@ data class EvCharger(
     val lng: Int?,                      // 경도
     var useTime: Int?,                  // 이용가능시간
     var saved: Boolean = false          // 즐겨찾기
-): Serializable
+): Parcelable

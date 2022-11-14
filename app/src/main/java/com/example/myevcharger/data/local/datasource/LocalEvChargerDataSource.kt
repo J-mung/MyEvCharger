@@ -6,7 +6,7 @@ import com.example.myevcharger.domain.model.EvCharger
 interface LocalEvChargerDataSource {
     fun getSavedEvCharger(): LiveData<List<EvCharger>>
 
-    fun upsert(evCharger: EvCharger): Long
+    suspend fun upsert(evCharger: EvCharger): Long
 
     suspend fun isSavedCharger(statId: Int): Boolean
 

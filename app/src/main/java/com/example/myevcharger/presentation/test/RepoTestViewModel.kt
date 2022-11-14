@@ -25,11 +25,11 @@ class RepoTestViewModel(
     fun getChargers() = viewModelScope.launch {
         chargers.postValue(Resource.Loading())
         val response = chargerRepository.getAllCharger()
-        chargers.postValue(handleChargersResponse(response))
+        //chargers.postValue(handleChargersResponse(response))
     }
 
     fun handleChargersResponse(response: Response<EvChargerResponse>): Resource<EvChargerResponse> {
-        if(response.isSuccessful) {
+        if (response.isSuccessful) {
             response.body()?.let { resultResponse ->
                 chargerPage++
                 if (chargerResponse == null) {
